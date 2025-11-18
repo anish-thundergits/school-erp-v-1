@@ -35,10 +35,10 @@ const SignInForm = () => {
     try {
       const response = await postService(apiName.adminLogin, body);
       console.log('responseresponse', response);
-      if (response.token) {
-        localStorage.setItem("token", response.token); // Save token to sessionStorage
-        localStorage.setItem("role", response.user?.role); // Save token to sessionStorage
-        setSchoolData(response.tenant);
+      if (response.data.token) {
+        localStorage.setItem("token", response.data.token); // Save token to sessionStorage
+        localStorage.setItem("role", response.data.user?.role); // Save token to sessionStorage
+        setSchoolData(response.data.tenant);
         showToast("Login successfully.", 'success');
         navigate("/admin/home");
       } else {
