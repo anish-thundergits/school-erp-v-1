@@ -67,7 +67,7 @@ function SubscriptionModal({ selectedPlan, onClose, onSuccess }) {
     try {
       const response = await getService(`${apiName.subscriptions}/create/${selectedPlan?._id}`);
       console.log(response)
-      const subscriptionId = response.data?._id;
+      const subscriptionId = response.data?.offerPlanId;
 
       if (!subscriptionId) {
         showToast("Failed to create subscription", 'error');

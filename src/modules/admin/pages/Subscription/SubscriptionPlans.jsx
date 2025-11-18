@@ -45,7 +45,7 @@ const SubscriptionPlans = () => {
             const result = await getService(apiName.SuperSubscriptionPlan); // API endpoint (e.g. '/posts')
             setEditMode(false);
             setEditId('');
-            setSubscriptionsList(result?.data);
+            setSubscriptionsList(result?.data.data);
             setShowModal(false);
             setLoading(false);
         } catch (error) {
